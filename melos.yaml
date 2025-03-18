@@ -1,0 +1,24 @@
+name: workspace_blank
+packages:
+  - packages/*
+
+scripts:
+  bootstrap:
+    description: "Get all the dependencies for all packages in the repo"
+    run: |
+      melos bootstrap
+
+  test:
+    description: "Run all tests in the repo"
+    run: |
+      melos run test
+
+  build:
+    description: "Build all packages in the repo"
+    run: |
+      melos run build
+
+  publish:
+    description: "Publish all packages in the repo"
+    run: |
+      melos publish
