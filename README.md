@@ -1,2 +1,1 @@
-# melos-dart-project-template
-A repository for a Dart package with CI setup
+This repository is empty. Any task executed on it should be considered a new capability and needs to be created.
