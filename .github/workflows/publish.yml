@@ -1,0 +1,31 @@
+name: Publish Dart Packages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Dart
+      uses: dart-lang/setup-dart@v1
+      with:
+        sdk: '2.12.0'
+
+    - name: Install Melos
+      run: dart pub global activate melos
+
+    - name: Bootstrap dependencies
+      run: melos bootstrap
+
+    - name: Build packages
+      run: melos run build
+
+    - name: Publish packages
+      run: melos publish
