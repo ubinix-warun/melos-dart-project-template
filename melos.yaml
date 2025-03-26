@@ -6,7 +6,7 @@ scripts:
   test:
     description: "Run all tests in the repo"
     run: |
-      melos run test
+      dart test
 
   build:
     description: "Build all packages in the repo"
