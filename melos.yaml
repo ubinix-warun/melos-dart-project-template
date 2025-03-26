@@ -3,17 +3,22 @@ packages:
   - packages/*
 
 scripts:
+  bootstrap:
+    description: "Get all the dependencies for all packages in the repo"
+    run: |
+      melos exec -- pub get
+
+  test:
+    description: "Run all tests in the repo"
+    run: |
+      melos exec -- pub run test
+
   build:
     description: "Build all packages in the repo"
     run: |
-      melos run build
+      melos exec -- pub run build_runner build
 
   publish:
     description: "Publish all packages in the repo"
     run: |
-      melos publish
-
-  update-dependencies:
-    description: "Update Dart dependencies for all packages in the repo"
-    run: |
-      melos bootstrap
+      melos exec -- pub publish --force
