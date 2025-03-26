@@ -3,11 +3,6 @@ packages:
   - packages/*
 
 scripts:
-  test:
-    description: "Run all tests in the repo"
-    run: |
-      melos run test
-
   build:
     description: "Build all packages in the repo"
     run: |
