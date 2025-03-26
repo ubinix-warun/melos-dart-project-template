@@ -1,13 +1,12 @@
-name: Dart CI
+name: Publish Dart Packages
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,5 +24,8 @@ jobs:
     - name: Bootstrap dependencies
       run: melos bootstrap
 
-    - name: Run tests
-      run: melos run test
+    - name: Build packages
+      run: melos run build
+
+    - name: Publish packages
+      run: melos publish
